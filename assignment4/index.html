@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon Shopping </title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="title">
+                <h1>Pokemon Adoption Center</h1>
+            </div>
+            <div id="tabs">
+                <a id="adoptTab" href="#" class="active">Adopt Pokemon</a>
+                <a id="checkoutTab" href="#">Checkout</a>
+            </div>
+        </div>
+        <div id="adopt">
+            <div id="charmander">
+                <img src="charmander.jpeg">
+                <h3>Charmander</h3>
+                <p>Charmander is a loveable little fire lizard.They tend to enjoy spicy foods such as cayenne peppers. we have many Charmanders that need a good home at the low, low price of $10 per Pokemon!</p>
+                <form>
+                    <select name="charmander" id="charmanderForm">
+                        <option value="0">How many Charmander to adopt?</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <button id="charButton">Add to Cart</button>
+                </form>
+                <div id="charmanderText"></div>
+            </div>
+            <div id="squirtle">
+                <img src="squirtle.jpeg">
+                <h3>Squirtle</h3>
+                <p>Squirtle is a slipper water turtle. They like to play in the bathtub and cause trouble around the house. We have many Squirtle that need a good home at the low, low price of $12 per Pokemon!</p>
+                <form>
+                    <select name="squirtle" id="squirtleForm">
+                        <option value="0">How many Squirtle to adopt?</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <button id="squirtleButton">Add to Cart</button>
+                </form>
+                <div id="squirtleText"></div>
+            </div>
+            <div id="cyndaquil">
+                <img src="cyndaquil.jpeg">
+                <h3>Cyndaquil</h3>
+                <p>Cyndaquil is a feisty fiery anteater. They lik e to play outside and then nap most of the daywe have many Cyndaquils that need a good home at the low, low price of $15 per pokemon.</p>
+                <form>
+                    <select name="cyndaquil" id="cyndaquilForm">
+                        <option value="0">How many Cyndaquil to adopt?</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <button id="cyndaquilButton">Add to Cart</button>
+                </form>
+                <div id="cyndaquilText"></div>
+            </div>
+        </div>
+        <div id="checkout">
+            <p id="totalCost">Total cost:
+                <br>There are no items in your cart.</p>
+            <ul>
+                <br>
+                <li id="charmanderCount"></li>
+                <br>
+                <li id="squirtleCount"></li>
+                <br>
+                <li id="cyndaquilCount"></li>
+                <br>
+            </ul>
+        </div>
+        <div id="footer">
+            <p>2018 Pokemon Adoption Center</p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+var total = 0;
+var charmanders = 0;
+var squirtles = 0;
+var cyndaquils = 0;
+var adoptTab = document.getElementById("adoptTab");
+var checkoutTab = document.getElementById("checkoutTab");
+var checkout = document.getElementById('checkout');
+var adopt = document.getElementById('adopt');
+var totalCost = document.getElementById("totalCost");
+var list = document.querySelector('ul');
+var charmanderCount = document.getElementById('charmanderCount');
+var squirtleCount = document.getElementById('squirtleCount');
+var cyndaquilCount = document.getElementById('cyndaquilCount');
+
+
+
+adoptTab.onclick = function() {
+    checkoutTab.classList = "";
+    adoptTab.classList = "active";
+    adopt.style.display = "inline";
+    checkout.style.display = "none";
+
+}
+checkoutTab.onclick = function() {
+    checkoutTab.classList = "active";
+    adoptTab.classList = "";
+    adopt.style.display = "none";
+    checkout.style.display = "inline";
+}
+
+function updateTotal() {
+
+    totalCost.innerHTML = "Total cost:" + (charmanders * 10 + squirtles * 12 + cyndaquils * 15);
+    charmanderCount.innerHTML = "Charmander: " + charmanders + " @ 10 per Pokemon";
+    squirtleCount.innerHTML = "Squirtle: " + squirtles + " @ 12 per Pokemon";
+    cyndaquilCount.innerHTML = "Cyndaquil: " + cyndaquils + " @ 15 per Pokemon";
+}
+
+var charButton = document.getElementById('charButton');
+var charmandForm = document.getElementById('charmanderForm');
+var charmanderText = document.getElementById('charmanderText');
+charButton.onclick = function(event) {
+    event.preventDefault();
+    list.style.display = "inline";
+    charmanderCount.style.display = "inline";
+    if (charmanderForm.value == 0) {
+        charmanderText.innerHTML = "Please select a number of Charmander";
+    } else {
+        charmanderText.innerHTML = charmanderForm.value + " Charmander added to cart";
+    }
+    charmanders += parseInt(charmanderForm.value);
+    updateTotal();
+}
+
+var squirtleButton = document.getElementById('squirtleButton');
+var squirtleForm = document.getElementById('squirtleForm');
+var squirtleText = document.getElementById('squirtleText');
+squirtleButton.onclick = function(event) {
+    event.preventDefault();
+    list.style.display = "inline";
+    squirtleCount.style.display = "inline";
+    if (squirtleForm.value == 0) {
+        squirtleText.innerHTML = "Please select a number of Squirtle";
+    } else {
+        squirtleText.innerHTML = squirtleForm.value + " Squirtle added to cart";
+    }
+    squirtles += parseInt(squirtleForm.value);
+    updateTotal();
+}
+var cyndaquilButton = document.getElementById('cyndaquilButton');
+var cyndaquilForm = document.getElementById('cyndaquilForm');
+var cyndaquilText = document.getElementById('cyndaquilText');
+cyndaquilButton.onclick = function(event) {
+    event.preventDefault();
+    list.style.display = "inline";
+    cyndaquilCount.style.display = "inline";
+    if (cyndaquilForm.value == 0) {
+        cyndaquilText.innerHTML = "Please select a number of Cyndaquil";
+    } else {
+        cyndaquilText.innerHTML = cyndaquilForm.value + " Cyndaquil added to cart";
+    }
+    cyndaquils += parseInt(cyndaquilForm.value);
+    updateTotal();
+}
+</script>
+
+</html>

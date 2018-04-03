@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Assignment 2 | Lucky Number</title>
+			<style type="text/css">
+				body{
+					 font-family: Arial;
+				
+				}
+				#color{
+					width: 500px;
+					height: 150px;
+					background-color: blue;
+					text-align: center;
+				}
+				img{
+					float: left;
+				}
+			</style>
+		</head>
+		
+		<body>
+			<div id="header">
+				<h1>It's Your Lucky Day!</h1>
+			</div>
+			<div id="time">
+				<p id="timedisp"></p>
+			</div>
+			<div id="color">
+
+			</div>
+			<div id="nums">
+				<p>Your three lucky numbers are:</p>
+				<img id='img1' src="">
+				<img id='img2' src="">
+				<img id='img3' src="">
+			</div>
+			<div id="pics">
+
+			</div>
+		</body>
+
+		<script type="text/javascript">
+			function getInt(highest) {
+
+			  return Math.floor( Math.random()*Math.floor(highest));
+			}
+			var balls = ['ball_1.png', 'ball_2.png', 'ball_3.png', 'ball_4.png', 'ball_5.png', 'ball_6.png', 'ball_7.png', 'ball_8.png', 'ball_9.png'];
+			var colors = ['red','green','blue','orange','pink','yellow'];
+			var tmp = new Date();
+			var hour = tmp.getHours();
+			var min = tmp.getMinutes();
+			if (min<10) {
+				min="0"+min;
+			}
+			var color = colors[getInt(6)];
+			 //console.log(color);
+			var ball1p=getInt(9);
+			var ball1= balls[ball1p];
+			balls.splice(ball1p,1);
+			// console.log(balls);
+			var ball2p=getInt(8);
+			var ball2= balls[ball2p];
+			balls.splice(ball1p,1);
+			// console.log(balls);
+			var ball3p=getInt(7);
+			var ball3= balls[ball3p];
+			balls.splice(ball3p,1);
+			//console.log(balls);
+			var colordiv = document.getElementById('color');
+			colordiv.style['background-color']=color;
+			colordiv.style['color']='white';
+			if (color==='yellow') {
+				colordiv.style['color']='black';
+			}
+			colordiv.style['font-size']='1.3em';
+			colordiv.innerHTML ="<br><br>Today's lucky color is "+color;
+			var img1 = document.getElementById('img1');
+			var img2 = document.getElementById('img2');
+			var img3 = document.getElementById('img3');
+
+			img1.src=ball1;
+			img2.src=ball2;
+			img3.src=ball3;
+			var timeclock;
+			if(hour>11){ //if after midday
+				if(hour!=12){
+					hour-=12;
+				}
+				timeclock=hour+":"+min+"pm"
+				if((hour>5)&&(hour<12)){
+					timeclock+=" - Good Evening!";
+				}
+				else{
+					timeclock+=" - Good Afternoon!"
+				}
+			}
+			else{
+				if (hour==0) {
+					hour=12;
+				}
+				timeclock=hour+":"+min+"am"
+				if((hour>5)&&(hour<12)){
+					timeclock+=" - Good Morning!";
+				}
+				else{
+					timeclock+=" - Good Night!"
+				}
+			}
+			
+			var timedisp = document.getElementById('timedisp');
+			timedisp.innerHTML = "The time is currently "+timeclock;
+
+
+
+
+
+ 		</script>
+
+	</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guess The Number </title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h1>Guess the Number!</h1>
+    <div id="text">
+        <p>Guess the Number is a game of chance that involves absolutely no skill. In this game the computer will roll a 6 sided die. Your job is to predict whether an EVEN or an ODD number will be rolled. Each guess costs $10, and you start the game with $50. If you guess incorrectly you will lose your $10 bet, but if you guess correctly you will win $10. The game ends when you run out of money, or when you choose to leave this webpage!</p>
+    </div>
+    <div id="bank">
+        <p>Your Bank: $<span id="account">50</span></p>
+    </div>
+    <div id="result">
+        <p id="resultText">Game Result</p>
+        <img id='die' src="images/dice-unknown.png">
+        <div id="buttons">
+            <button id="even">EVEN</button>
+            <button id="odd">ODD</button>
+            <button id="again">PLAY AGAIN</button>
+        </div>
+    </div>
+    <button id="clear">Clear</button>
+    <div id="past">
+        <p>History: </p>
+    </div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>In Class Work</title>
+	<style type="text/css">
+		.blc{
+			height: 200px;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div class="blc">one</div>
+	<div class="blc">two</div>
+	<div class="blc">three</div>
+	<div class="blc">four</div>	
+</body>
+
+<script type="text/javascript">
+	var allDivs = document.getElementsByTagName('div');
+	for (var i = 0; i< allDivs.length;i+=1){
+		allDivs[i].style.width='100px';
+	}
+</script>
+</html>

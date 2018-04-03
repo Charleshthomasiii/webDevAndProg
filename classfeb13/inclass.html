@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Intro to JavaScript</title>
+			<style type="text/css">
+				body{
+					border: 1px solid black;
+				}
+			</style>
+		</head>
+		<body>
+			<h1>Adding Stuff to the page</h1>
+			<button id="clickme">Click Me</button>
+
+			<script>
+				var cm = document.getElementById('clickme');
+				cm.onclick = fucntion() {
+					var newImage = document.createElement('img');
+					newImage.src = 'ball_1.png';
+					var theBody = document.querySelector("#foo");
+					newImage.width='100'
+					theBody.appendChild( newImage);
+				}
+				// var newImage = document.createElement('img');
+				// //give it a file source
+				// newImage.src = 'ball_1.png';
+				// newImage.width='100'
+				// var theBody = document.querySelector("#foo");
+				// //append this element as a child of the body tag
+				// theBody.appendChild( newImage);
+
+
+			</script>
+		</body>
+	</html>

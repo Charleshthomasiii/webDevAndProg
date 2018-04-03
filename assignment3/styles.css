@@ -1,0 +1,37 @@
+
+body{
+	width: 80%;
+	margin: auto;
+	font-family: Arial;
+	background-color: #cec6ff;
+
+}
+
+h1{
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+}
+#text, #result, #bank{
+	padding-left: 10px;
+	padding-right: 10px;
+
+}
+#chooser{
+
+}
+img{
+	height: 150px;
+	width: 150px;
+	float: right;
+
+}
+button{
+	float: right;
+}
+#buttons{
+	clear: both;
+}
+#even{
+	clear: both;
+}

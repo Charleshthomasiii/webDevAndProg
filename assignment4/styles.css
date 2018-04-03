@@ -1,0 +1,50 @@
+body{
+	background-color: #b6efff;
+}
+#header{
+	background-color: white;
+}
+h1{
+	text-align: center;
+}
+#tabs{
+	/*float: left;*/
+	text-align: center;
+}
+#adopt{
+	clear: both;
+}
+#checkout{
+	display: none;
+}
+ul{
+	display: none;
+}
+li{
+	display: none;
+}
+a{
+	color: black;
+	background-color: white;
+	font-size: 1.5em;
+	text-decoration: none;
+	padding: 6px;
+}
+#container{
+	width: 960px;
+	margin: auto;
+}
+img{
+	float: left;
+	width: 120px
+}
+.active{
+	background-color: yellow;
+}
+#footer{
+	text-align: center;
+	background-color: white;
+/*	position: relative;
+	bottom: 5px;
+	left: 480px;*/
+}

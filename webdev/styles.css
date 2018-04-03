@@ -1,0 +1,51 @@
+.btn img{
+	width: 100%;
+
+}
+body{
+	font-family: calibri;
+	margin: 0;
+	background-color: white;
+}
+#blocks{
+	width: 80%;
+	margin: auto;
+}
+.btn{
+	box-sizing: border-box;
+	float: left;
+}
+.btn:hover{
+	background-color: #5685df;
+}
+#header {
+	background-color: black;
+	color: #7dbaf5;
+	font-size: 200%;
+	height: 60px;
+	padding-top: 20px;
+	padding-left: 20px;
+
+}
+#footer{
+	clear: both;
+	text-align: center;
+	height: 50px;
+	color: #7dbaf5;
+	background-color: black;
+}
+@media screen and (min-width: 961px) {
+	.btn{
+		width: 25%;
+	}
+}
+@media screen and (min-width: 481px) and (max-width: 960px) {
+	.btn{
+		width: 50%;
+	}
+}
+@media screen and (max-width: 480px) {
+	.btn{
+		width: 100%;
+	}
+}

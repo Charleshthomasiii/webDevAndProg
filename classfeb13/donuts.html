@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Working with the dom</title>
+		<style type="text/css">
+			.tab{
+				width: 200px;
+				height: 50px;
+				padding: 15px;
+				text-align: center;
+				border: 1px solid black;
+				float: left;
+			}
+			.tab:hover{
+				background-color: #eee;
+			}
+			.active{
+				background-color: yellow;
+			}
+			.hidden{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Donuts Are Awesome</h1>
+		<div id="tabs">
+			<div class="tab active" id="tabWelcome">welcome</div>
+			<div class="tab" id="tabTraditional">traditional</div>
+			<div class="tab" id="tabGlazed">glazed</div>
+			<br style="clear: both;">
+		</div>
+		<div id="content">
+			<div id="contentWelcome">welcome to the page</div>
+			<div class="hidden" id="contentTraditional">traditional donuts</div>
+			<div class="hidden" id="contentGlazed">glazed are also good</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="script.js"></script>
+</html>
